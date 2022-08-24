@@ -1,0 +1,17 @@
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\bin\Debug\AutoSaisie.exe.config
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\bin\Debug\AutoSaisie.exe
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\bin\Debug\AutoSaisie.pdb
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\bin\Debug\EntityFramework.dll
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\bin\Debug\EntityFramework.xml
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.csproj.AssemblyReference.cache
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\Interop.Objets100cLib.dll
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.csproj.ResolveComReference.cache
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.Form1.resources
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.Properties.Resources.resources
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.csproj.GenerateResource.cache
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.csproj.CoreCompileInputs.cache
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.csproj.CopyComplete
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.exe
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.pdb
