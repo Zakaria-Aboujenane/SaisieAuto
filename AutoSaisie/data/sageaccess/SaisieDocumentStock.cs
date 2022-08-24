@@ -14,13 +14,9 @@ namespace AutoSaisie.data.sageaccess
         public IBSCIALApplication3 baseCIAL { get; set; }
         public SaisieDocumentStock()
         {
-            //db = new ConnectToDatabase();
+            db = new ConnectToDatabase();
             baseCIAL = db.OuvrirBaseCIAL();
         }
-
-      
-      
-
         public void enregistrerDansERP(IBODocumentStock3 document)
         {
             try

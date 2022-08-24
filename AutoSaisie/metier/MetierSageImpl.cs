@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
+using Objets100cLib;
 
 namespace AutoSaisie.metier
 {
@@ -51,13 +53,22 @@ namespace AutoSaisie.metier
 
         public void loadAndSave(Fichier f)
         {
-           
+            String s="";
             Object classeSage = ReflectionUtils.createInstance(f.typeDocument.classeSage);
-            ILecteur<Object> o = (ILecteur<object>)ReflectionUtils.createInstance("Lecteur" + f.typeDocument.nomClasse);
-            ISaisie<Object> osaisie = (ISaisie<object>)ReflectionUtils.createInstance("Saisie" + f.typeDocument.nomClasse); 
-            foreach (var item in o.readAll(f))
+            Object o = ReflectionUtils.createInstance("Lecteur" + f.typeDocument.nomClasse);
+            Type typeLecture = o.GetType();
+            MethodInfo methodReadAll = typeLecture.GetMethod("readAll");
+            object[] parametersArray = new object[] { f };
+            var allDocs = methodReadAll.Invoke(o, parametersArray);
+
+
+            Object osaisie = ReflectionUtils.createInstance("Saisie" + f.typeDocument.nomClasse);
+            Type typeSaisie = osaisie.GetType();
+            MethodInfo methodERP = typeSaisie.GetMethod("enregistrerDansERP");
+            foreach (var item in (dynamic)allDocs)
             {
-                osaisie.enregistrerDansERP(item);
+                object[] saisieParams = new object[] { item };
+                methodERP.Invoke(osaisie, saisieParams);
             }
         }
 

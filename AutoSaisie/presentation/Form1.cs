@@ -37,16 +37,31 @@ namespace AutoSaisie
 
         private void button1_Click(object sender, EventArgs e)
         {
+            IDAOParams<TypeDoc> daotype = new DAOTypeDocImpl();
             /*
-            IDAOParams<TypeDoc> dao = new DAOTypeDocImpl();
+            
             List<TypeDoc> types = dao.getAll();
             foreach (var item in types)
             {
                 labelTest.Text += item.nomClasse;
             }
             */
-            ReflectionUtils.createInstance("SaisieDocumentStock");
-            
+
+            Fichier f = new Fichier();
+            f.id = 1;
+            f.separateur = ';';
+            f.structure = "do_date-0;do_ref-1;CompteA-2;depotStockage-3";
+            f.localisation = "C:/Users/Zakaria/Desktop/test_sage/doc_stock.txt";
+            f.typeDocument = daotype.findByID(1);
+            Entreprise entr = new Entreprise();
+            entr.domaine = "economie";
+            entr.id = 1;
+            entr.nomBaseDonnee = "BIJOU";
+            entr.nomEntreprise = "ROBINHOOD";
+            metier.setEntreprise(entr);
+            metier.loadAndSave(f);
+
+
         }
     }
 }

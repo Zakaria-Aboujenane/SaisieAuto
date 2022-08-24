@@ -28,7 +28,7 @@ namespace AutoSaisie.data.lecturefichier
                 listeDocStock.Add(DocumentBuilder.buildDocumentStock(
                         listEls[structureMap["do_date"]],
                         listEls[structureMap["do_ref"]],
-                        listEls[structureMap["compteA"]],
+                        listEls[structureMap["CompteA"]],
                         listEls[structureMap["depotStockage"]]
                 ));
             }

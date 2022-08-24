@@ -37,7 +37,7 @@ namespace AutoSaisie.data.DAO
 
         public TypeDoc findByID(int id)
         {
-            throw new NotImplementedException();
+            return dbcontext.typeDocs.Find(id);
         }
 
         public List<TypeDoc> getAll()
@@ -45,8 +45,8 @@ namespace AutoSaisie.data.DAO
             List<TypeDoc> types = new List<TypeDoc>();
             foreach (var type in dbcontext.typeDocs.ToList<TypeDoc>())
             {
-                if (ReflectionUtils.createInstance("AutoSaisie.data.sageaccess.Saisie" + type.nomClasse) != null
-                        && ReflectionUtils.createInstance("AutoSaisie.data.lecturefichier.Lecteur" + type.nomClasse) !=null
+                if (ReflectionUtils.createInstance("Saisie" + type.nomClasse) != null
+                        && ReflectionUtils.createInstance("Lecteur" + type.nomClasse) !=null
                     )
                 {
                     types.Add(type);
