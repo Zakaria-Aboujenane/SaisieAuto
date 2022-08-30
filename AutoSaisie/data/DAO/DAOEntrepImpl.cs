@@ -30,7 +30,10 @@ namespace AutoSaisie.data.DAO
 
         public Entreprise edit(Entreprise t)
         {
-            Entreprise e =dbcontext.entreprises.Add(t);
+            Entreprise e = dbcontext.entreprises.Find(t.id);
+            e.nomEntreprise = t.nomEntreprise;
+            e.nomBaseDonnee = t.nomBaseDonnee;
+            e.domaine = t.domaine;
             dbcontext.SaveChanges();
             return e;
         }

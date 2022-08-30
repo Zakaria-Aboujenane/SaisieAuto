@@ -2,6 +2,7 @@
 using AutoSaisie.data.lecturefichier;
 using AutoSaisie.metier;
 using AutoSaisie.model;
+using AutoSaisie.presentation;
 using AutoSaisie.utils;
 using System;
 using System.Collections.Generic;
@@ -12,16 +13,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Tulpep.NotificationWindow;
 
 namespace AutoSaisie
 {
-    public partial class Form1 : Form
+    public partial class AutoSaisie : Form
     {
         Dictionary<int, String> typesDoc;
         public static int selectedIDF;
         Dictionary<int, int> indexOfFichier;
         IMetierSage metier;
-        public Form1()
+        public AutoSaisie()
         {
             InitializeComponent();
             
@@ -29,7 +31,7 @@ namespace AutoSaisie
             metier = new MetierSageImpl();
 
             nomEntrepriseLabel.Text = MyApplicationContext.entrepriseCurrent.nomEntreprise;
-
+            labelDomaine.Text = MyApplicationContext.entrepriseCurrent.domaine;
             fillListView();
             fillTypeCombobox();
             
@@ -89,15 +91,19 @@ namespace AutoSaisie
         private void button1_Click(object sender, EventArgs e)
         {
             Fichier f = metier.findFichier(selectedIDF);
+            panelWait.Visible = true;
+          
             metier.loadAndSave(f);
+            showWaitWindows("les donnees sont bien enregistres dans l'ERP Sage");
+            panelWait.Visible = false;
 
 
         }
-        public void showWaitWindows()
+        public void showWaitWindows(String msg)
         {
             PopupNotifier popup = new PopupNotifier();
-            popup.TitleText = "BE HAPPY";
-            popup.ContentText = "Thank you";
+            popup.TitleText = "Notification de AutoSaiseSAGE";
+            popup.ContentText = msg;
             popup.Popup();// show  
         }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -167,6 +173,28 @@ namespace AutoSaisie
                 listView1.Items.Remove(eachItem);
                 metier.deleteFichier(indexOfFichier[eachItem.Index]);
             }
+        }
+
+        private void parametresBtn_Click(object sender, EventArgs e)
+        {
+          
+            using (Params newProjectForm = new Params())
+            {
+                if (newProjectForm.ShowDialog() == DialogResult.OK)
+                {
+                    
+                }
+                else
+                {
+                    nomEntrepriseLabel.Text = MyApplicationContext.entrepriseCurrent.nomEntreprise;
+                    labelDomaine.Text = MyApplicationContext.entrepriseCurrent.domaine;
+                }
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

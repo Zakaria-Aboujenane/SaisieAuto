@@ -1,7 +1,7 @@
 ﻿
 namespace AutoSaisie
 {
-    partial class Form1
+    partial class AutoSaisie
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -29,7 +29,7 @@ namespace AutoSaisie
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.parametresBtn = new System.Windows.Forms.Button();
             this.nomEntrepriseLabel = new System.Windows.Forms.Label();
             this.btnInsererDansERP = new System.Windows.Forms.Button();
@@ -48,6 +48,11 @@ namespace AutoSaisie
             this.labelTest = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.nomFichier = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panelWait = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labelDomaine = new System.Windows.Forms.Label();
+            this.panelWait.SuspendLayout();
             this.SuspendLayout();
             // 
             // parametresBtn
@@ -58,6 +63,7 @@ namespace AutoSaisie
             this.parametresBtn.TabIndex = 0;
             this.parametresBtn.Text = "parametres";
             this.parametresBtn.UseVisualStyleBackColor = true;
+            this.parametresBtn.Click += new System.EventHandler(this.parametresBtn_Click);
             // 
             // nomEntrepriseLabel
             // 
@@ -84,7 +90,7 @@ namespace AutoSaisie
             // 
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3});
+            listViewItem1});
             this.listView1.Location = new System.Drawing.Point(352, 91);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(348, 287);
@@ -212,11 +218,49 @@ namespace AutoSaisie
             this.nomFichier.Size = new System.Drawing.Size(247, 20);
             this.nomFichier.TabIndex = 28;
             // 
-            // Form1
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(73, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(291, 13);
+            this.label6.TabIndex = 50;
+            this.label6.Text = "Veuillez patientez ...... cela peut prendre quelques secondes";
+            // 
+            // panelWait
+            // 
+            this.panelWait.Controls.Add(this.label6);
+            this.panelWait.Location = new System.Drawing.Point(172, 221);
+            this.panelWait.Name = "panelWait";
+            this.panelWait.Size = new System.Drawing.Size(433, 48);
+            this.panelWait.TabIndex = 31;
+            this.panelWait.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(311, 44);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "domaine : ";
+            // 
+            // labelDomaine
+            // 
+            this.labelDomaine.AutoSize = true;
+            this.labelDomaine.Location = new System.Drawing.Point(384, 44);
+            this.labelDomaine.Name = "labelDomaine";
+            this.labelDomaine.Size = new System.Drawing.Size(0, 13);
+            this.labelDomaine.TabIndex = 33;
+            // 
+            // AutoSaisie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelDomaine);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.panelWait);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nomFichier);
             this.Controls.Add(this.btnEnregistrer);
@@ -235,8 +279,11 @@ namespace AutoSaisie
             this.Controls.Add(this.btnInsererDansERP);
             this.Controls.Add(this.nomEntrepriseLabel);
             this.Controls.Add(this.parametresBtn);
-            this.Name = "Form1";
+            this.Name = "AutoSaisie";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.panelWait.ResumeLayout(false);
+            this.panelWait.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,6 +309,10 @@ namespace AutoSaisie
         private System.Windows.Forms.Label labelTest;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nomFichier;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panelWait;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label labelDomaine;
     }
 }
 

@@ -8,10 +8,12 @@ C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\bin\Debug\Entit
 C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.csproj.AssemblyReference.cache
 C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\Interop.Objets100cLib.dll
 C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.csproj.ResolveComReference.cache
-C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.Form1.resources
 C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.Properties.Resources.resources
 C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.csproj.GenerateResource.cache
 C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.csproj.CoreCompileInputs.cache
 C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.csproj.CopyComplete
 C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.exe
 C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.pdb
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\bin\Debug\Tulpep.NotificationWindow.dll
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.presentation.Params.resources
+C:\Users\Zakaria\Desktop\projet stage 2022\AutoSaisie\AutoSaisie\obj\Debug\AutoSaisie.AutoSaisie.resources
