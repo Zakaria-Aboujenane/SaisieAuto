@@ -40,9 +40,9 @@ namespace AutoSaisie.metier
         }
 
    
-        public void updateFichier(int id)
+        public void updateFichier(Fichier f)
         {
-            idaoF.edit(idaoF.findByID(id));
+            idaoF.edit(f);
         }
 
   
@@ -53,24 +53,42 @@ namespace AutoSaisie.metier
 
         public void loadAndSave(Fichier f)
         {
-            String s="";
-            Object classeSage = ReflectionUtils.createInstance(f.typeDocument.classeSage);
-            Object o = ReflectionUtils.createInstance("Lecteur" + f.typeDocument.nomClasse);
-            Type typeLecture = o.GetType();
-            MethodInfo methodReadAll = typeLecture.GetMethod("readAll");
+           
+            Object o = ReflectionUtils.createInstance("Sage" + f.typeDocument.nomClasse);
+            Type typeSage = o.GetType();
+            MethodInfo lireEtEnregistrer = typeSage.GetMethod("readAll");
             object[] parametersArray = new object[] { f };
-            var allDocs = methodReadAll.Invoke(o, parametersArray);
+            lireEtEnregistrer.Invoke(o, parametersArray);
 
 
-            Object osaisie = ReflectionUtils.createInstance("Saisie" + f.typeDocument.nomClasse);
-            Type typeSaisie = osaisie.GetType();
-            MethodInfo methodERP = typeSaisie.GetMethod("enregistrerDansERP");
-            foreach (var item in (dynamic)allDocs)
-            {
-                object[] saisieParams = new object[] { item };
-                methodERP.Invoke(osaisie, saisieParams);
-            }
+
+
+
         }
 
+        public List<Fichier> getFichiersByEntreprise(Entreprise entreprise)
+        {
+            return  entreprise.fichiers;
+        }
+
+        public Fichier findFichier(int id)
+        {
+            return idaoF.findByID(id);
+        }
+
+        public List<TypeDoc> getAllTypeDocs()
+        {
+            return idaoTypeDoc.getAll();
+        }
+
+        public TypeDoc getTypeByID(int id)
+        {
+            return idaoTypeDoc.findByID(id);
+        }
+
+        public void ajouterFichier(Fichier f)
+        {
+             idaoF.add(f);
+        }
     }
 }

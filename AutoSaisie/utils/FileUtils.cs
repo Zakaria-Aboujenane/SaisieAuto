@@ -1,9 +1,12 @@
-﻿using System;
+﻿using AutoSaisie.utils;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AutoSaisie.data.lecturefichier
 {
@@ -36,5 +39,19 @@ namespace AutoSaisie.data.lecturefichier
             }
             return lines;
         }
+
+        public static ImageList getImageListFromFile()
+        {
+            ImageList imageList = new ImageList() ;
+            foreach (var ligne in FileUtils.fileToStrings(MyApplicationContext.filesPath + "images.txt"))
+            {
+                
+                string[] l = ligne.Split('-');
+                imageList.Images.Add(l[0], Image.FromFile(MyApplicationContext.iconsPath + l[1]));
+            }
+            return imageList;
+            
+        }
+      
     }
 }

@@ -29,72 +29,211 @@ namespace AutoSaisie
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
             this.parametresBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.nomEntrepriseLabel = new System.Windows.Forms.Label();
+            this.btnInsererDansERP = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.btnSupprimer = new System.Windows.Forms.Button();
+            this.btnAjouter = new System.Windows.Forms.Button();
+            this.btnEnregistrer = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.separateur = new System.Windows.Forms.TextBox();
+            this.structure = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.typeDocsCombobox = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.localisation = new System.Windows.Forms.TextBox();
             this.labelTest = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nomFichier = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // parametresBtn
             // 
-            this.parametresBtn.Location = new System.Drawing.Point(687, 38);
+            this.parametresBtn.Location = new System.Drawing.Point(713, 18);
             this.parametresBtn.Name = "parametresBtn";
             this.parametresBtn.Size = new System.Drawing.Size(75, 23);
             this.parametresBtn.TabIndex = 0;
             this.parametresBtn.Text = "parametres";
             this.parametresBtn.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // nomEntrepriseLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(358, 55);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nom Entreprise";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.nomEntrepriseLabel.AutoSize = true;
+            this.nomEntrepriseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomEntrepriseLabel.Location = new System.Drawing.Point(12, 18);
+            this.nomEntrepriseLabel.Name = "nomEntrepriseLabel";
+            this.nomEntrepriseLabel.Size = new System.Drawing.Size(259, 39);
+            this.nomEntrepriseLabel.TabIndex = 1;
+            this.nomEntrepriseLabel.Text = "Nom Entreprise";
+            this.nomEntrepriseLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // comboBox1
+            // btnInsererDansERP
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "hhh",
-            "hhh"});
-            this.comboBox1.Location = new System.Drawing.Point(190, 219);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.btnInsererDansERP.Location = new System.Drawing.Point(703, 165);
+            this.btnInsererDansERP.Name = "btnInsererDansERP";
+            this.btnInsererDansERP.Size = new System.Drawing.Size(85, 101);
+            this.btnInsererDansERP.TabIndex = 3;
+            this.btnInsererDansERP.Text = "inserer vers ERP";
+            this.btnInsererDansERP.UseVisualStyleBackColor = true;
+            this.btnInsererDansERP.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button1
+            // listView1
             // 
-            this.button1.Location = new System.Drawing.Point(402, 216);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "inserer";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.listView1.HideSelection = false;
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem3});
+            this.listView1.Location = new System.Drawing.Point(352, 91);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(348, 287);
+            this.listView1.TabIndex = 5;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // btnSupprimer
+            // 
+            this.btnSupprimer.Location = new System.Drawing.Point(366, 384);
+            this.btnSupprimer.Name = "btnSupprimer";
+            this.btnSupprimer.Size = new System.Drawing.Size(90, 23);
+            this.btnSupprimer.TabIndex = 16;
+            this.btnSupprimer.Text = "supprimer";
+            this.btnSupprimer.UseVisualStyleBackColor = true;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
+            // 
+            // btnAjouter
+            // 
+            this.btnAjouter.Location = new System.Drawing.Point(610, 384);
+            this.btnAjouter.Name = "btnAjouter";
+            this.btnAjouter.Size = new System.Drawing.Size(90, 23);
+            this.btnAjouter.TabIndex = 17;
+            this.btnAjouter.Text = "Ajouter";
+            this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            // 
+            // btnEnregistrer
+            // 
+            this.btnEnregistrer.Location = new System.Drawing.Point(274, 303);
+            this.btnEnregistrer.Name = "btnEnregistrer";
+            this.btnEnregistrer.Size = new System.Drawing.Size(72, 23);
+            this.btnEnregistrer.TabIndex = 27;
+            this.btnEnregistrer.Text = "Enregistrer";
+            this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 178);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 13);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "separateur";
+            // 
+            // separateur
+            // 
+            this.separateur.Location = new System.Drawing.Point(99, 175);
+            this.separateur.Name = "separateur";
+            this.separateur.Size = new System.Drawing.Size(247, 20);
+            this.separateur.TabIndex = 25;
+            // 
+            // structure
+            // 
+            this.structure.Location = new System.Drawing.Point(99, 201);
+            this.structure.Name = "structure";
+            this.structure.Size = new System.Drawing.Size(247, 96);
+            this.structure.TabIndex = 24;
+            this.structure.Text = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 243);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 13);
+            this.label4.TabIndex = 23;
+            this.label4.Text = "structure";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 156);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "localisation";
+            // 
+            // typeDocsCombobox
+            // 
+            this.typeDocsCombobox.FormattingEnabled = true;
+            this.typeDocsCombobox.Location = new System.Drawing.Point(99, 122);
+            this.typeDocsCombobox.Name = "typeDocsCombobox";
+            this.typeDocsCombobox.Size = new System.Drawing.Size(247, 21);
+            this.typeDocsCombobox.TabIndex = 21;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "type Du fichier";
+            // 
+            // localisation
+            // 
+            this.localisation.Location = new System.Drawing.Point(99, 149);
+            this.localisation.Name = "localisation";
+            this.localisation.Size = new System.Drawing.Size(247, 20);
+            this.localisation.TabIndex = 19;
             // 
             // labelTest
             // 
             this.labelTest.AutoSize = true;
-            this.labelTest.Location = new System.Drawing.Point(424, 315);
+            this.labelTest.Location = new System.Drawing.Point(53, 256);
             this.labelTest.Name = "labelTest";
             this.labelTest.Size = new System.Drawing.Size(0, 13);
-            this.labelTest.TabIndex = 4;
+            this.labelTest.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "nom du fichier";
+            // 
+            // nomFichier
+            // 
+            this.nomFichier.Location = new System.Drawing.Point(99, 96);
+            this.nomFichier.Name = "nomFichier";
+            this.nomFichier.Size = new System.Drawing.Size(247, 20);
+            this.nomFichier.TabIndex = 28;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelTest);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.nomFichier);
+            this.Controls.Add(this.btnEnregistrer);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.separateur);
+            this.Controls.Add(this.structure);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.typeDocsCombobox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.localisation);
+            this.Controls.Add(this.labelTest);
+            this.Controls.Add(this.btnAjouter);
+            this.Controls.Add(this.btnSupprimer);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.btnInsererDansERP);
+            this.Controls.Add(this.nomEntrepriseLabel);
             this.Controls.Add(this.parametresBtn);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -106,10 +245,23 @@ namespace AutoSaisie
         #endregion
 
         private System.Windows.Forms.Button parametresBtn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label nomEntrepriseLabel;
+        private System.Windows.Forms.Button btnInsererDansERP;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button btnSupprimer;
+        private System.Windows.Forms.Button btnAjouter;
+        private System.Windows.Forms.Button btnEnregistrer;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox separateur;
+        private System.Windows.Forms.RichTextBox structure;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox typeDocsCombobox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox localisation;
         private System.Windows.Forms.Label labelTest;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox nomFichier;
     }
 }
 

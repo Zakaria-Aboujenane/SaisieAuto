@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using AutoSaisie.model;
+using System.Data.SqlClient;
 
 namespace AutoSaisie.data.DAO
 {
@@ -12,7 +13,9 @@ namespace AutoSaisie.data.DAO
     {
         public SQLServerContext():base("name=MYDBNAME")
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<SQLServerContext>());
+            SqlConnection.ClearAllPools();
+            Database.SetInitializer<SQLServerContext>(new CreateDatabaseIfNotExists<SQLServerContext>());
+            SqlConnection.ClearAllPools();
         }
         public DbSet<Fichier> fichiers { get; set; }
         public DbSet<Entreprise> entreprises { get; set; }

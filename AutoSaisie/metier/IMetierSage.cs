@@ -11,10 +11,17 @@ namespace AutoSaisie.metier
     {
         void loadAndSave(Fichier f);// loader du fichier et enregistrer vers la base de donnee de l'ERP
         List<Fichier> getFichers();
+        void ajouterFichier(Fichier f);
         void deleteFichier(int id);
-        void updateFichier(int id);
+        void updateFichier(Fichier f);
+        Fichier findFichier(int id);
+        List<Fichier> getFichiersByEntreprise(Entreprise entreprise);
 
         Entreprise setEntreprise(Entreprise e);
+
+        List<TypeDoc> getAllTypeDocs();
+
+        TypeDoc getTypeByID(int id);
 
     }
 }

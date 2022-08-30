@@ -37,7 +37,10 @@ namespace AutoSaisie.data.DAO
 
         public Entreprise findByID(int id)
         {
-            return dbcontext.entreprises.Find(id);
+            var entreWithFiles = dbcontext.entreprises.
+                 Include("Fichiers").FirstOrDefault(p => p.id == id);
+
+            return entreWithFiles;
         }
 
         public List<Entreprise> getAll()

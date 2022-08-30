@@ -9,8 +9,9 @@ namespace AutoSaisie.model
     class Fichier
     {
         public int id { get; set; }
+        public String nomFichier { get; set; }
         public String localisation { get; set; }
-        public char separateur { get; set; }
+        public String separateur { get; set; }
         public String structure { get; set; }
 
         public TypeDoc typeDocument { get; set; }

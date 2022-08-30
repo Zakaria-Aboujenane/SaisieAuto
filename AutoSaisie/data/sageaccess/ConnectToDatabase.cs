@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoSaisie.utils;
 using Objets100cLib;
 
 namespace AutoSaisie.data.sageaccess
@@ -14,11 +15,20 @@ namespace AutoSaisie.data.sageaccess
         public IBSCIALApplication3 baseCommerciale { get; set; }
         public String errorMsg { get; set; }
         public String seccessMsg { get; set; }
+        public String nomBD { get; set; }
 
         public ConnectToDatabase()
         {
             baseComptable = new BSCPTAApplication100c();
             baseCommerciale = new BSCIALApplication100c();
+            nomBD = MyApplicationContext.nomBD;
+
+        }
+        public ConnectToDatabase(String nomBD)
+        {
+            baseComptable = new BSCPTAApplication100c();
+            baseCommerciale = new BSCIALApplication100c();
+            this.nomBD = nomBD;
 
         }
         public IBSCIALApplication3 OuvrirBaseCIAL()
@@ -26,7 +36,7 @@ namespace AutoSaisie.data.sageaccess
             try
             {
 
-                baseCommerciale.Name = "C:/Users/Public/Documents/Sage/Entreprise 100c/Bijou.gcm";
+                baseCommerciale.Name = "C:/Users/Public/Documents/Sage/Entreprise 100c/"+nomBD+".gcm";
                 baseCommerciale.Loggable.UserName = "<Administrateur>";
                 baseCommerciale.Loggable.UserPwd = "";
                 baseCommerciale.Open();
@@ -47,7 +57,7 @@ namespace AutoSaisie.data.sageaccess
             try
             {
 
-                baseComptable.Name = "C:/Users/Public/Documents/Sage/Entreprise 100c/Bijou.mae";
+                baseComptable.Name = "C:/Users/Public/Documents/Sage/Entreprise 100c/"+nomBD+".mae";
                 baseComptable.Loggable.UserName = "<Administrateur>";
                 baseComptable.Loggable.UserPwd = "";
                 baseComptable.Open();

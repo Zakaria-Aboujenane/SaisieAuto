@@ -25,6 +25,7 @@ namespace AutoSaisie.model
             documentStock.DO_Ref = do_ref;
             documentStock.CompteA = DocumentBuilder.getCodeAffaire(baseCial, CompteA);
             documentStock.DepotStockage = baseCial.FactoryDepot.ReadIntitule(depotStockage);
+            
             return documentStock;
         }
         public static IBODocumentStockLigne3 buildDocumentStockLigne(IBODocumentStock3 documentStock, String ref_txt,int ref_int)

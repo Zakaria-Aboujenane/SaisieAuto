@@ -17,6 +17,7 @@ namespace AutoSaisie.data.DAO
 
         public void add(Fichier t)
         {
+            
             dbcontext.fichiers.Add(t);
             dbcontext.SaveChanges();
         }
@@ -30,7 +31,11 @@ namespace AutoSaisie.data.DAO
 
         public Fichier edit(Fichier t)
         {
-            Fichier f = dbcontext.fichiers.Add(t);
+            TypeDoc type = dbcontext.typeDocs.Find(t.typeDocument.id);
+            type.classeSage = "IBO";
+            Fichier f = dbcontext.fichiers.Find(t.id);
+            f.typeDocument = type;
+
             dbcontext.SaveChanges();
             return f;
         }
@@ -42,7 +47,7 @@ namespace AutoSaisie.data.DAO
 
         public Fichier findByID(int id)
         {
-            return dbcontext.fichiers.Find(id);
+            return dbcontext.fichiers.Include("typeDocument").FirstOrDefault(f => f.id == id);
         }
     }
 }
