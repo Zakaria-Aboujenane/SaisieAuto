@@ -1,4 +1,5 @@
-﻿using AutoSaisie.metier;
+﻿using AutoSaisie.data.lecturefichier;
+using AutoSaisie.metier;
 using AutoSaisie.model;
 using AutoSaisie.utils;
 using System;
@@ -20,24 +21,29 @@ namespace AutoSaisie.presentation
         {
             InitializeComponent();
             metier = new MetierSageImpl();
-            Entreprise entreprise = MyApplicationContext.entrepriseCurrent;
+            Entreprise entreprise = MyAppCtx.entrepriseCurrent;
             domaine.Text = entreprise.domaine;
             nomEntrep.Text = entreprise.nomEntreprise;
             baseSage.Text = entreprise.nomBaseDonnee;
-           
+            dossierSage.Text = FileUtils.getSageFor("path");
+            usernameSage.Text = FileUtils.getSageFor("username");
+            passwordSage.Text = FileUtils.getSageFor("password");
         }
 
      
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            Entreprise mentreprise = MyApplicationContext.entrepriseCurrent;
+           
+            Entreprise mentreprise = MyAppCtx.entrepriseCurrent;
             mentreprise.domaine = domaine.Text;
             mentreprise.nomEntreprise = nomEntrep.Text;
             mentreprise.nomBaseDonnee = baseSage.Text;
             metier.setEntreprise(mentreprise);
-            MyApplicationContext.entrepriseCurrent = mentreprise;
+            MyAppCtx.entrepriseCurrent = mentreprise;
+            FileUtils.setSageFor("path", dossierSage.Text);
+            FileUtils.setSageFor("username", usernameSage.Text);
+            FileUtils.setSageFor("password", passwordSage.Text);
             this.Close();
 
         }

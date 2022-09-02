@@ -1,4 +1,5 @@
 ﻿using AutoSaisie.model;
+using AutoSaisie.utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace AutoSaisie.data.DAO
 {
     class DAOFichierimpl : IDAOParams<Fichier>
     {
-        public SQLServerContext dbcontext { get; set; }
+        public MyDBContext dbcontext { get; set; }
         public DAOFichierimpl()
         {
-            dbcontext = new SQLServerContext();
+            dbcontext = new MyDBContext();
         }
 
         public void add(Fichier t)

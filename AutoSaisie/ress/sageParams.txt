@@ -1,0 +1,3 @@
+path-C:/Users/Public/Documents/Sage/Entreprise 100c/
+username-<Administrateur>
+password-

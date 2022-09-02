@@ -47,8 +47,7 @@ namespace AutoSaisie.data.sageaccess
             foreach (var ligne in lignes)
             {
                 String[] listEls = ligne.Split(fichier.separateur[0]);
-                int x = structureMap["do_date"];
-                String x2 = listEls[x];
+        
                 Dictionary<String, String> mYList = new Dictionary<string, string>();
                 mYList["do_date"] = listEls[structureMap["do_date"]];
                 mYList["do_ref"] = listEls[structureMap["do_ref"]];

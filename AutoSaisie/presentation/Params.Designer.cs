@@ -36,12 +36,18 @@ namespace AutoSaisie.presentation
             this.label2 = new System.Windows.Forms.Label();
             this.baseSage = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dossierSage = new System.Windows.Forms.TextBox();
+            this.passwordSage = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.usernameSage = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(86, 114);
+            this.label1.Location = new System.Drawing.Point(89, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 41;
@@ -49,14 +55,14 @@ namespace AutoSaisie.presentation
             // 
             // nomEntrep
             // 
-            this.nomEntrep.Location = new System.Drawing.Point(193, 111);
+            this.nomEntrep.Location = new System.Drawing.Point(214, 35);
             this.nomEntrep.Name = "nomEntrep";
             this.nomEntrep.Size = new System.Drawing.Size(244, 20);
             this.nomEntrep.TabIndex = 40;
             // 
             // domaine
             // 
-            this.domaine.Location = new System.Drawing.Point(193, 167);
+            this.domaine.Location = new System.Drawing.Point(214, 91);
             this.domaine.Name = "domaine";
             this.domaine.Size = new System.Drawing.Size(244, 20);
             this.domaine.TabIndex = 37;
@@ -64,7 +70,7 @@ namespace AutoSaisie.presentation
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(85, 167);
+            this.label3.Location = new System.Drawing.Point(88, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 34;
@@ -73,7 +79,7 @@ namespace AutoSaisie.presentation
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(86, 140);
+            this.label2.Location = new System.Drawing.Point(89, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 32;
@@ -81,14 +87,14 @@ namespace AutoSaisie.presentation
             // 
             // baseSage
             // 
-            this.baseSage.Location = new System.Drawing.Point(193, 140);
+            this.baseSage.Location = new System.Drawing.Point(214, 64);
             this.baseSage.Name = "baseSage";
             this.baseSage.Size = new System.Drawing.Size(244, 20);
             this.baseSage.TabIndex = 31;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(362, 217);
+            this.button1.Location = new System.Drawing.Point(383, 217);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 42;
@@ -96,11 +102,65 @@ namespace AutoSaisie.presentation
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(88, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(119, 13);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "dossier des bases Sage";
+            // 
+            // dossierSage
+            // 
+            this.dossierSage.Location = new System.Drawing.Point(214, 117);
+            this.dossierSage.Name = "dossierSage";
+            this.dossierSage.Size = new System.Drawing.Size(244, 20);
+            this.dossierSage.TabIndex = 47;
+            // 
+            // passwordSage
+            // 
+            this.passwordSage.Location = new System.Drawing.Point(214, 173);
+            this.passwordSage.Name = "passwordSage";
+            this.passwordSage.Size = new System.Drawing.Size(244, 20);
+            this.passwordSage.TabIndex = 46;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(88, 173);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 13);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "Password Sage";
+            // 
+            // usernameSage
+            // 
+            this.usernameSage.Location = new System.Drawing.Point(214, 146);
+            this.usernameSage.Name = "usernameSage";
+            this.usernameSage.Size = new System.Drawing.Size(244, 20);
+            this.usernameSage.TabIndex = 43;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(89, 146);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 13);
+            this.label6.TabIndex = 44;
+            this.label6.Text = "Nom Utilisateur Sage";
+            // 
             // Params
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 307);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dossierSage);
+            this.Controls.Add(this.passwordSage);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.usernameSage);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nomEntrep);
@@ -124,5 +184,11 @@ namespace AutoSaisie.presentation
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox baseSage;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox dossierSage;
+        private System.Windows.Forms.TextBox passwordSage;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox usernameSage;
+        private System.Windows.Forms.Label label6;
     }
 }

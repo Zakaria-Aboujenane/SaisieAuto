@@ -29,7 +29,7 @@ namespace AutoSaisie
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
             this.parametresBtn = new System.Windows.Forms.Button();
             this.nomEntrepriseLabel = new System.Windows.Forms.Label();
             this.btnInsererDansERP = new System.Windows.Forms.Button();
@@ -78,6 +78,7 @@ namespace AutoSaisie
             // 
             // btnInsererDansERP
             // 
+            this.btnInsererDansERP.Enabled = false;
             this.btnInsererDansERP.Location = new System.Drawing.Point(703, 165);
             this.btnInsererDansERP.Name = "btnInsererDansERP";
             this.btnInsererDansERP.Size = new System.Drawing.Size(85, 101);
@@ -90,7 +91,7 @@ namespace AutoSaisie
             // 
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.listView1.Location = new System.Drawing.Point(352, 91);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(348, 287);
@@ -100,6 +101,7 @@ namespace AutoSaisie
             // 
             // btnSupprimer
             // 
+            this.btnSupprimer.Enabled = false;
             this.btnSupprimer.Location = new System.Drawing.Point(366, 384);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(90, 23);
@@ -110,6 +112,7 @@ namespace AutoSaisie
             // 
             // btnAjouter
             // 
+            this.btnAjouter.Enabled = false;
             this.btnAjouter.Location = new System.Drawing.Point(610, 384);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(90, 23);

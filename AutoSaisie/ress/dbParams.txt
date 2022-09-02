@@ -1,0 +1,5 @@
+url-C:/Users/Public/Documents/Sage/Entreprise 100c/
+port-
+username-
+password-
+databaseSet-0

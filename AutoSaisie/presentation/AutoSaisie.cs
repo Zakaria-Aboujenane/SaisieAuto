@@ -26,16 +26,26 @@ namespace AutoSaisie
         public AutoSaisie()
         {
             InitializeComponent();
-            
-            indexOfFichier = new Dictionary<int, int>();
             metier = new MetierSageImpl();
+            try
+            {
+                indexOfFichier = new Dictionary<int, int>();
 
-            nomEntrepriseLabel.Text = MyApplicationContext.entrepriseCurrent.nomEntreprise;
-            labelDomaine.Text = MyApplicationContext.entrepriseCurrent.domaine;
-            fillListView();
-            fillTypeCombobox();
+                nomEntrepriseLabel.Text = MyAppCtx.entrepriseCurrent.nomEntreprise;
+                labelDomaine.Text = MyAppCtx.entrepriseCurrent.domaine;
+                fillListView();
+                fillTypeCombobox();
+            }catch(Exception exp)
+            {
+                MessageBox.Show("problem loading database ... on va ajouter queleques enregistements");
+                MessageBox.Show("error:"+exp.Message);
+
+            }
             
-           
+
+
+
+
 
 
         }
@@ -59,7 +69,7 @@ namespace AutoSaisie
             var imageList = FileUtils.getImageListFromFile();
             listView1.LargeImageList = imageList;
             int index = -1;
-            foreach (var fichier in metier.getFichiersByEntreprise(MyApplicationContext.entrepriseCurrent))
+            foreach (var fichier in metier.getFichiersByEntreprise(MyAppCtx.entrepriseCurrent))
             {
                 Fichier myF = metier.findFichier(fichier.id);
                 ListViewItem item = new ListViewItem(myF.nomFichier);
@@ -95,6 +105,7 @@ namespace AutoSaisie
           
             metier.loadAndSave(f);
             showWaitWindows("les donnees sont bien enregistres dans l'ERP Sage");
+            MessageBox.Show("les donnees sont bien enregistres dans l'ERP Sage");
             panelWait.Visible = false;
 
 
@@ -120,9 +131,23 @@ namespace AutoSaisie
                 typeDocsCombobox.SelectedIndex = typeDocsCombobox.FindStringExact(f.typeDocument.type);
                 structure.Text = f.structure;
                 nomFichier.Text = f.nomFichier;
+
+                btnAjouter.Enabled = true;
+                btnEnregistrer.Enabled = true;
+                btnInsererDansERP.Enabled = true;
+                btnSupprimer.Enabled = true;
             }catch(Exception exception)
             {
+                btnAjouter.Enabled = false;
+               
+                btnInsererDansERP.Enabled = false;
+                btnSupprimer.Enabled = false;
 
+                localisation.Text = "";
+                separateur.Text = "";
+                typeDocsCombobox.SelectedIndex = typeDocsCombobox.FindStringExact("");
+                structure.Text = "";
+                nomFichier.Text = "";
             }
 
         }
@@ -140,38 +165,53 @@ namespace AutoSaisie
 
         private void btnEnregistrer_Click(object sender, EventArgs e)
         {
-            if (selectedIDF >= 0)
+            if (!nomFichier.Text.Equals("") && 
+                !localisation.Text.Equals("") &&
+                !separateur.Text.Equals(""))
             {
-                Fichier f = metier.findFichier(selectedIDF);
-                f.nomFichier = nomFichier.Text;
-                f.localisation = localisation.Text;
-                f.separateur = separateur.Text;
-                int typeDocID = ((KeyValuePair<int, string>)typeDocsCombobox.SelectedItem).Key;
-                f.typeDocument.id = typeDocID;
-                metier.updateFichier(f);
-               
+                if (selectedIDF >= 0)
+                {
+                    Fichier f = metier.findFichier(selectedIDF);
+                    f.nomFichier = nomFichier.Text;
+                    f.localisation = localisation.Text;
+                    f.separateur = separateur.Text;
+                    f.structure = structure.Text;
+                    int typeDocID = ((KeyValuePair<int, string>)typeDocsCombobox.SelectedItem).Key;
+                    f.typeDocument.id = typeDocID;
+                    metier.updateFichier(f);
+
+                }
+                else
+                {
+                    Fichier f = new Fichier();
+                    f.nomFichier = nomFichier.Text;
+                    f.localisation = localisation.Text;
+                    f.separateur = separateur.Text;
+                    f.structure = structure.Text;
+                    int typeDocID = ((KeyValuePair<int, string>)typeDocsCombobox.SelectedItem).Key;
+                    f.typeDocument.id = typeDocID;
+                    metier.ajouterFichier(f);
+
+                }
+                fillListView();
             }
             else
             {
-                Fichier f = new Fichier();
-                f.nomFichier = nomFichier.Text;
-                f.localisation = localisation.Text;
-                f.separateur = separateur.Text;
-                int typeDocID = ((KeyValuePair<int, string>)typeDocsCombobox.SelectedItem).Key;
-                f.typeDocument.id = typeDocID;
-                metier.ajouterFichier(f);
-               
+                MessageBox.Show("veuillez remplir tous les champs");
             }
-            fillListView();
 
         }
 
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
+            int i = 0;
             foreach (ListViewItem eachItem in listView1.SelectedItems)
             {
+                int indexSelected = eachItem.Index;
+                metier.deleteFichier(indexOfFichier[indexSelected]);
                 listView1.Items.Remove(eachItem);
-                metier.deleteFichier(indexOfFichier[eachItem.Index]);
+               
+               
             }
         }
 
@@ -186,8 +226,8 @@ namespace AutoSaisie
                 }
                 else
                 {
-                    nomEntrepriseLabel.Text = MyApplicationContext.entrepriseCurrent.nomEntreprise;
-                    labelDomaine.Text = MyApplicationContext.entrepriseCurrent.domaine;
+                    nomEntrepriseLabel.Text = MyAppCtx.entrepriseCurrent.nomEntreprise;
+                    labelDomaine.Text = MyAppCtx.entrepriseCurrent.domaine;
                 }
             }
         }

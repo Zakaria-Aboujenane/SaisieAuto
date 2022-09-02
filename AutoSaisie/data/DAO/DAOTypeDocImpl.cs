@@ -12,10 +12,10 @@ namespace AutoSaisie.data.DAO
 {
     class DAOTypeDocImpl : IDAOParams<TypeDoc>
     {
-        public SQLServerContext dbcontext { get; set; }
+        public MyDBContext dbcontext { get; set; }
         public DAOTypeDocImpl()
         {
-            dbcontext = new SQLServerContext();
+            dbcontext = new MyDBContext();
         }
 
 

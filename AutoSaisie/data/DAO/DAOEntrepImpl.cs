@@ -1,4 +1,5 @@
 ﻿using AutoSaisie.model;
+using AutoSaisie.utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace AutoSaisie.data.DAO
 {
     class DAOEntrepImpl : IDAOParams<Entreprise>
     {
-        public SQLServerContext dbcontext;
+        public MyDBContext dbcontext;
         public DAOEntrepImpl()
         {
-            dbcontext = new SQLServerContext();
+            dbcontext = new MyDBContext();
         }
 
         public void add(Entreprise t)
